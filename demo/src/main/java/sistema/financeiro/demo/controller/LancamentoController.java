@@ -9,9 +9,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import sistema.financeiro.demo.domain.Categoria.DadosListagemCategoria;
 import sistema.financeiro.demo.domain.Lancamento.*;
-import sistema.financeiro.demo.domain.Pessoa.DadosListagemPessoa;
 
 @RestController
 @RequestMapping("lancamentos")

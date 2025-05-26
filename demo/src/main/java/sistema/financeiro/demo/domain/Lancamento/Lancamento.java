@@ -10,7 +10,6 @@ import java.time.LocalDate;
 
 @Table(name = "lancamentos")
 @Entity(name = "lancamento")
-@Data
 @Getter
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -38,38 +37,6 @@ public class Lancamento {
     private Categoria categoria;
 
     public Lancamento() {}
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public LocalDate getDataVencimento() {
-        return dataVencimento;
-    }
-
-    public LocalDate getDataPagamento() {
-        return dataPagamento;
-    }
-
-    public BigDecimal getValor() {
-        return valor;
-    }
-
-    public String getObservacao() {
-        return observacao;
-    }
-
-    public TipoLancamento getTipoLancamento() {
-        return tipoLancamento;
-    }
-
-    public Boolean getAtivo() {
-        return ativo;
-    }
 
     public Lancamento(DadosCadastroLancamento dados){
         this.descricao = dados.descricao();
