@@ -23,7 +23,7 @@ public class Lancamento {
     private LocalDate dataPagamento;
     private BigDecimal valor;
     private String observacao;
-    private Boolean ativo;
+
 
     @Enumerated(EnumType.STRING)
     private TipoLancamento tipoLancamento;
@@ -36,6 +36,36 @@ public class Lancamento {
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
 
+    private Boolean ativo;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public LocalDate getDataVencimento() {
+        return dataVencimento;
+    }
+
+    public LocalDate getDataPagamento() {
+        return dataPagamento;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public TipoLancamento getTipoLancamento() {
+        return tipoLancamento;
+    }
+
     public Lancamento() {}
 
     public Lancamento(DadosCadastroLancamento dados){
@@ -45,6 +75,9 @@ public class Lancamento {
         this.valor = dados.valor();
         this.observacao = dados.observacao();
         this.tipoLancamento = dados.tipoLancamento();
+        this.pessoa = dados.pessoa();
+        this.categoria = dados.categoria();
+        this.ativo = true;
     }
 
     public void atualizarinformacoes(DadosAtualizacaoLancamento dados) {

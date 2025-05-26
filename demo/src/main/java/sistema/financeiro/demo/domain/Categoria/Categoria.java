@@ -27,6 +27,16 @@ public class Categoria {
     @OneToMany(mappedBy = "categoria")
     private List<Lancamento> lancamentos = new ArrayList<>();
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Categoria(){}
+
     public Categoria(DadosCadastroCategoria dados){
         this.nome = dados.nome();
         this.ativo = true;

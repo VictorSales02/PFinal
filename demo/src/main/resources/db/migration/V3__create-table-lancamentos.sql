@@ -6,6 +6,7 @@ create table lancamentos(
     valor float not null,
     observacao varchar(100),
     tipolancamento varchar(20) check(tipolancamento in ('receita','despesa')) not null,
+    ativo boolean default true,
     id_pessoa bigint not null,
     id_categoria bigint not null,
 

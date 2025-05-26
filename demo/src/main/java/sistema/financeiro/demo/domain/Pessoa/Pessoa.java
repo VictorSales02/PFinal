@@ -30,6 +30,22 @@ public class Pessoa {
     @OneToMany(mappedBy = "pessoa")
     private List<Lancamento> lancamentos = new ArrayList<>();
 
+    public Long getId() {
+        return id;
+    }
+
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public Pessoa(){}
+
     public Pessoa(DadosCadastroPessoa dados) {
         this.ativo = true;
         this.nome = dados.nome();
