@@ -14,7 +14,8 @@ import sistema.financeiro.demo.domain.Categoria.*;
 @RestController
 @RequestMapping("categorias")
 public class CategoriaController {
-     @Autowired
+
+    @Autowired
      private CategoriaRepository repository;
 
     @PostMapping
@@ -42,6 +43,8 @@ public class CategoriaController {
 
         return ResponseEntity.ok(new DadosDetalhamentoCategoria(categoria));
     }
+
+
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity excluir(@PathVariable Long id){

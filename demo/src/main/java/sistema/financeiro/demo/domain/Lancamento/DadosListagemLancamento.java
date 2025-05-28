@@ -12,16 +12,16 @@ public record DadosListagemLancamento(
         LocalDate dataPagamento,
         BigDecimal valor,
         String observacao,
-        TipoLancamento tipoLancamento
+        TipoLancamento tipo
 ) {
 
         public DadosListagemLancamento(Lancamento lancamento){
                 this(lancamento.getId(),
                         lancamento.getDescricao(),
-                        lancamento.getDataVencimento(),
-                        lancamento.getDataPagamento(),
+                        lancamento.getData_vencimento(),
+                        lancamento.getData_pagamento(),
                         lancamento.getValor(),
                         lancamento.getObservacao(),
-                        lancamento.getTipoLancamento());
+                        lancamento.getTipo());
         }
 }

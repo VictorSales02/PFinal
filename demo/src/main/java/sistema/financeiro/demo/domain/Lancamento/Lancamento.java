@@ -12,21 +12,20 @@ import java.time.LocalDate;
 @Entity(name = "lancamento")
 @Getter
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
 public class Lancamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String descricao;
-    private LocalDate dataVencimento;
-    private LocalDate dataPagamento;
+    private LocalDate data_vencimento;
+    private LocalDate data_pagamento;
     private BigDecimal valor;
     private String observacao;
 
 
     @Enumerated(EnumType.STRING)
-    private TipoLancamento tipoLancamento;
+    private TipoLancamento tipo;
 
     @ManyToOne
     @JoinColumn(name = "id_pessoa")
@@ -46,12 +45,12 @@ public class Lancamento {
         return descricao;
     }
 
-    public LocalDate getDataVencimento() {
-        return dataVencimento;
+    public LocalDate getData_vencimento() {
+        return data_vencimento;
     }
 
-    public LocalDate getDataPagamento() {
-        return dataPagamento;
+    public LocalDate getData_pagamento() {
+        return data_pagamento;
     }
 
     public BigDecimal getValor() {
@@ -62,19 +61,19 @@ public class Lancamento {
         return observacao;
     }
 
-    public TipoLancamento getTipoLancamento() {
-        return tipoLancamento;
+    public TipoLancamento getTipo() {
+        return tipo;
     }
 
     public Lancamento() {}
 
     public Lancamento(DadosCadastroLancamento dados){
         this.descricao = dados.descricao();
-        this.dataVencimento = dados.dataVencimento();
-        this.dataPagamento = dados.dataPagamento();
+        this.data_vencimento = dados.dataVencimento();
+        this.data_pagamento = dados.dataPagamento();
         this.valor = dados.valor();
         this.observacao = dados.observacao();
-        this.tipoLancamento = dados.tipoLancamento();
+        this.tipo = dados.tipo();
         this.pessoa = dados.pessoa();
         this.categoria = dados.categoria();
         this.ativo = true;
@@ -85,10 +84,10 @@ public class Lancamento {
             this.descricao = dados.descricao();
         }
         if (dados.dataPagamento() != null) {
-            this.dataPagamento = dados.dataPagamento();
+            this.data_pagamento = dados.dataPagamento();
         }
         if (dados.dataVencimento() != null) {
-            this.dataVencimento = dados.dataVencimento();
+            this.data_vencimento = dados.dataVencimento();
         }
 
         if (dados.valor() != null) {
