@@ -13,7 +13,6 @@ import java.util.List;
 @Table(name = "categorias")
 @Entity(name = "categoria")
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Categoria {

@@ -6,8 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public record DadosAtualizacaoLancamento(
-        @NotNull
-        Long id, String descricao,
+        String descricao,
          LocalDate dataVencimento,
          LocalDate dataPagamento,
          BigDecimal valor,

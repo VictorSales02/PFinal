@@ -35,10 +35,10 @@ public class CategoriaController {
         return ResponseEntity.ok(page);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoCategoria dados){
-        var categoria = repository.getReferenceById(dados.id());
+    public ResponseEntity atualizar(@PathVariable Long id, @RequestBody DadosAtualizacaoCategoria dados){
+        var categoria = repository.getReferenceById(id);
         categoria.atualizarinformacoes(dados);
 
         return ResponseEntity.ok(new DadosDetalhamentoCategoria(categoria));

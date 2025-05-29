@@ -36,10 +36,10 @@ public class LancamentoController {
         return ResponseEntity.ok(page);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoLancamento dados){
-        var lancamento = repository.getReferenceById(dados.id());
+    public ResponseEntity atualizar(@PathVariable Long id, @RequestBody @Valid DadosAtualizacaoLancamento dados){
+        var lancamento = repository.getReferenceById(id);
         lancamento.atualizarinformacoes(dados);
 
         return ResponseEntity.ok(new DadosDetalhamentoLancamento(lancamento));
